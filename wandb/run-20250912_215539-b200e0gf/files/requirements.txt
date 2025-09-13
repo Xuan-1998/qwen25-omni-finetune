@@ -237,7 +237,7 @@ json5==0.9.6
 opentelemetry-exporter-otlp-proto-grpc==1.26.0
 pyzmq==27.0.1
 pydantic-extra-types==2.10.5
-pillow==11.2.1
+pillow==11.3.0
 evaluate==0.4.5
 snowballstemmer==2.2.0
 jupyter-console==6.6.3
