@@ -1,0 +1,104 @@
+# Qwen 2.5 Omni Fine-tuning Configuration
+# Based on official recommendations and community implementations
+
+# Model Configuration
+model:
+  name_or_path: "Qwen/Qwen2.5-Omni-7B"  # Change to 72B for larger model
+  trust_remote_code: true
+  torch_dtype: "float16"
+  device_map: "auto"
+
+# LoRA Configuration
+lora:
+  enabled: true
+  r: 8                    # LoRA rank
+  alpha: 32              # LoRA alpha
+  dropout: 0.1           # LoRA dropout
+  target_modules:        # Target modules for LoRA
+    - "q_proj"
+    - "v_proj"
+    - "k_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+# Data Configuration
+data:
+  train_dataset_path: "./data/train_data.json"
+  validation_dataset_path: "./data/validation_data.json"
+  test_dataset_path: "./data/test_data.json"
+  max_seq_length: 2048
+  preprocessing_num_workers: 4
+
+# Training Configuration
+training:
+  output_dir: "./models/qwen25_omni_sft"
+  logging_dir: "./logs"
+  
+  # Batch Configuration
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 8
+  dataloader_num_workers: 4
+  
+  # Optimization
+  learning_rate: 1e-5
+  weight_decay: 0.01
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_epsilon: 1e-8
+  
+  # Training Schedule
+  num_train_epochs: 3
+  max_steps: -1  # -1 means use num_train_epochs
+  warmup_steps: 100
+  warmup_ratio: 0.03
+  
+  # Saving and Logging
+  save_steps: 500
+  save_total_limit: 3
+  logging_steps: 10
+  logging_first_step: true
+  eval_steps: 500
+  evaluation_strategy: "steps"
+  load_best_model_at_end: true
+  metric_for_best_model: "loss"
+  greater_is_better: false
+  
+  # Precision
+  fp16: true
+  bf16: false
+  
+  # Other
+  remove_unused_columns: false
+  report_to: "tensorboard"
+  run_name: "qwen25_omni_sft"
+  seed: 42
+
+# Hardware Configuration
+hardware:
+  # Recommended configurations based on model size
+  # For 7B model:
+  # - Full fine-tuning: A100 80GB
+  # - LoRA (r=8): RTX 4090 24GB
+  # - QLoRA (4-bit): RTX 3090 24GB
+  
+  # For 72B model:
+  # - Full fine-tuning: 8×A100 80GB
+  # - LoRA (r=8): 2×L40S 48GB
+  # - QLoRA (4-bit): 4×RTX 4090 24GB
+  
+  minimum_gpu_memory: 24  # GB
+  recommended_gpu_memory: 40  # GB
+
+# Evaluation Configuration
+evaluation:
+  max_new_tokens: 512
+  temperature: 0.7
+  do_sample: true
+  top_p: 0.9
+  top_k: 50
+  repetition_penalty: 1.1
