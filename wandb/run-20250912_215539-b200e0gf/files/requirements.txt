@@ -558,7 +558,7 @@ gensim==4.3.0
 arrow==1.2.3
 lmdb==1.4.1
 service-identity==18.1.0
-transformers==4.51.3
+transformers==4.53.0
 stack-data==0.2.0
 fastjsonschema==2.16.2
 conda-pack==0.6.0
