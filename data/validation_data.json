@@ -1,0 +1,12 @@
+[
+  {
+    "input": "请解释什么是深度学习？",
+    "output": "深度学习是机器学习的一个子领域，它使用多层神经网络来模拟人脑的工作方式。深度学习能够自动学习数据中的复杂模式和特征，在图像识别、语音处理、自然语言理解等领域取得了突破性进展。",
+    "image_path": null
+  },
+  {
+    "input": "写一个简单的排序算法。",
+    "output": "```python\ndef bubble_sort(arr):\n    \"\"\"\n    冒泡排序算法\n    \"\"\"\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]\n    return arr\n\n# 测试\nnumbers = [64, 34, 25, 12, 22, 11, 90]\nsorted_numbers = bubble_sort(numbers)\nprint(sorted_numbers)  # [11, 12, 22, 25, 34, 64, 90]\n```",
+    "image_path": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "input": "请描述这张图片中的内容。",
+    "output": "这是一张美丽的风景图片，展示了蓝天白云下的绿色山脉和清澈的湖泊。图片构图优美，色彩丰富，给人一种宁静祥和的感觉。",
+    "image_path": "images/sample1.jpg"
+  },
+  {
+    "input": "解释一下什么是人工智能？",
+    "output": "人工智能（AI）是指让机器模拟人类智能的技术。它包括机器学习、深度学习、自然语言处理等多个领域。AI可以帮助我们解决复杂问题，提高工作效率，改善生活质量。",
+    "image_path": null
+  },
+  {
+    "input": "请分析这段音频的内容。",
+    "output": "这段音频包含了一段清晰的对话，语速适中，发音标准。主要内容涉及技术讨论，说话者表达了专业的观点和建议。",
+    "audio_path": "audio/sample1.wav"
+  },
+  {
+    "input": "总结一下这个视频的主要观点。",
+    "output": "这个视频主要讨论了当前技术发展的趋势，强调了创新和合作的重要性。演讲者提出了几个关键建议：持续学习、拥抱变化、建立团队合作。整个演讲结构清晰，逻辑性强。",
+    "video_path": "videos/sample1.mp4"
+  },
+  {
+    "input": "帮我写一个Python函数来计算斐波那契数列。",
+    "output": "```python\ndef fibonacci(n):\n    \"\"\"\n    计算斐波那契数列的第n项\n    \n    Args:\n        n (int): 要计算的项数\n    \n    Returns:\n        int: 斐波那契数列的第n项\n    \"\"\"\n    if n <= 1:\n        return n\n    \n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    \n    return b\n\n# 示例用法\nprint(fibonacci(10))  # 输出: 55\n```",
+    "image_path": null
+  },
+  {
+    "input": "请翻译这句话：'Hello, how are you today?'",
+    "output": "这句话的中文翻译是：'你好，你今天怎么样？'",
+    "image_path": null
+  },
+  {
+    "input": "解释一下机器学习中的过拟合问题。",
+    "output": "过拟合（Overfitting）是机器学习中的一个常见问题，指模型在训练数据上表现很好，但在新的、未见过的数据上表现较差的现象。\n\n主要原因包括：\n1. 模型过于复杂，参数过多\n2. 训练数据不足\n3. 训练时间过长\n\n解决方法：\n1. 增加训练数据\n2. 使用正则化技术\n3. 减少模型复杂度\n4. 使用交叉验证\n5. 早停（Early Stopping）",
+    "image_path": null
+  },
+  {
+    "input": "请分析这张图片中的数学公式。",
+    "output": "这张图片展示了一个复杂的数学公式，看起来是一个积分表达式。公式涉及三角函数和指数函数，可能用于描述某种物理现象或数学关系。具体的推导过程需要更多的上下文信息。",
+    "image_path": "images/math_formula.jpg"
+  }
+]
