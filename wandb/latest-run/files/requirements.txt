@@ -508,7 +508,7 @@ pyasn1-modules==0.2.8
 jmespath==0.10.0
 prometheus-fastapi-instrumentator==7.1.0
 QDarkStyle==3.0.2
-pip==25.0.1
+pip==25.2
 pyodbc==4.0.34
 requests-file==1.5.1
 pylint==2.16.2
