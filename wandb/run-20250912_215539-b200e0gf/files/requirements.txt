@@ -1,7 +1,7 @@
 websockets==15.0.1
 pybase64==1.4.2
 rouge_score==0.1.2
-jupyterlab==3.6.3
+jupyterlab==4.4.8
 httpcore==1.0.8
 jsonschema==4.23.0
 liger_kernel==0.5.3
