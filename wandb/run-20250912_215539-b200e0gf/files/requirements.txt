@@ -543,7 +543,7 @@ diffusers==0.35.1
 dill==0.3.6
 python-json-logger==2.0.7
 nvidia-cuda-cupti-cu12==12.4.127
-uv==0.8.14
+uv==0.9.6
 setuptools==68.0.0
 lazy-object-proxy==1.6.0
 tree-sitter==0.25.1
